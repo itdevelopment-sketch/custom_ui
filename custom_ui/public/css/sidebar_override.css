@@ -1,0 +1,38 @@
+/* FORCE override everything */
+.layout-side-section {
+    width: 250px !important;
+    background: #ffffff !important;
+    border-right: 1px solid #e5e7eb !important;
+}
+
+/* Menu items */
+.layout-side-section .standard-sidebar-item {
+    margin: 6px 12px !important;
+    padding: 10px 14px !important;
+    border-radius: 10px !important;
+    background: transparent !important;
+    color: #374151 !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Hover */
+.layout-side-section .standard-sidebar-item:hover {
+    background: #f3f4f6 !important;
+    transform: translateX(6px) !important;
+}
+
+/* Active */
+.layout-side-section .standard-sidebar-item.active,
+.layout-side-section .standard-sidebar-item.selected {
+    background: #eef2ff !important;
+    color: #4f46e5 !important;
+}
+
+/* Icons */
+.layout-side-section .standard-sidebar-item .icon {
+    color: #9ca3af !important;
+}
+
+.layout-side-section .standard-sidebar-item.active .icon {
+    color: #4f46e5 !important;
+}
