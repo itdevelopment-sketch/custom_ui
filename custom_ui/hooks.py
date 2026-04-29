@@ -4,10 +4,27 @@ app_publisher = "custom app"
 app_description = "custom app"
 app_email = "itdevelopment@liquiconnect.in"
 app_license = "mit"
-app_include_css = ["/assets/custom_ui/css/ubs_theme.css"]   # all desk pages
-app_include_js  = ["/assets/custom_ui/js/ubs_home.js"]
-web_include_css = ["/assets/custom_ui/css/ubs_theme.css"]   # www pages
+# app_include_css = ["/assets/custom_ui/css/fleet_dashboard.css"]   # all desk pages
+# app_include_js  = ["/assets/custom_ui/js/fleet_dashboard.js"]
+# web_include_css = ["/assets/custom_ui/css/fleet_dashboard.css"]   # www pages
 
+# home_page = "fleet_dashboard"
+# app_include_css = [
+#     "/assets/custom_ui/css/fleet_dashboard.css",
+# ]
+# app_include_js = [
+#     "/assets/custom_ui/js/fleet_dashboard.js",
+# ]
+ 
+# # ── Also include on public www/ pages ───────────────────────
+# web_include_css = [
+#     "/assets/custom_ui/css/fleet_dashboard.css",
+# ]
+# web_include_js = [
+#     "/assets/custom_ui/js/fleet_dashboard.js",
+# ]
+ 
+app_include_css = "/assets/custom_ui/css/new_style.css"
 # Apps
 # ------------------
 
@@ -44,6 +61,7 @@ web_include_css = ["/assets/custom_ui/css/ubs_theme.css"]   # www pages
 
 # include js in page
 # page_js = {"page" : "public/js/file.js"}
+
 
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}

@@ -1,0 +1,441 @@
+/* ============================================================
+   UBS Travel — custom_sidebar.css  v4
+   Fix: always-visible sidebar text, teal active, full width
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@700;800&display=swap');
+
+/* ── Global font ────────────────────────────────────────── */
+body, input, button, select, textarea {
+  font-family: 'Barlow', sans-serif !important;
+}
+
+html, body {
+  height: 100vh !important;
+  overflow: hidden !important;
+}
+/* ══════════════════════════════════════════════════════════
+   FULL WIDTH LAYOUT — remove all gaps/padding from content
+══════════════════════════════════════════════════════════ */
+
+
+.page-container {
+  height: calc(100vh - 48px) !important; /* subtract navbar */
+  display: flex !important;
+}
+
+/* Hide ONLY Help dropdown button */
+button.btn-reset.nav-link[aria-controls="toolbar-help"] {
+  display: none !important;
+}
+
+
+.container,
+.container-fluid {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.layout-main-section-wrapper {
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: 100vh !important;
+  display: flex;
+  flex: 1 !important;
+  overflow-y: auto !important;
+  height: 100% !important;
+}
+
+
+
+.layout-main-section {
+  padding: 20px !important;
+  background: #eef2f3 !important;
+  flex: 1;
+
+}
+.desk-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.desk-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.desk-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(43,191,191,0.6);
+  border-radius: 10px;
+}
+.desk-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #2BBFBF;
+}
+/* ══════════════════════════════════════════════════════════
+   NAVBAR — white with teal underline
+══════════════════════════════════════════════════════════ */
+.navbar,
+header.navbar {
+  background: #ffffff !important;
+  border-bottom: 3px solid #2BBFBF !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   SIDEBAR WRAPPER
+══════════════════════════════════════════════════════════ */
+.desk-sidebar {
+  background: #0B3D3A !important;
+  border-right: none !important;
+  padding: 0 !important;
+  min-height: 100vh !important;
+  height: 100% !important;
+  overflow-y: auto !important;
+}
+
+/* ── Section label "PUBLIC" ─────────────────────────────── */
+.desk-sidebar .sidebar-label,
+.standard-sidebar-section .standard-sidebar-label {
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: rgba(255, 255, 255, 0.40) !important;
+  padding: 14px 18px 5px !important;
+  display: block !important;
+  font-family: 'Barlow', sans-serif !important;
+}
+
+/* ── Every nav item — ALWAYS VISIBLE ───────────────────── */
+.desk-sidebar .item,
+.standard-sidebar-section .standard-sidebar-item,
+.standard-sidebar-section a,
+.standard-sidebar-section a.standard-sidebar-item {
+  color: rgba(255, 255, 255, 0.70) !important;   /* ← always visible */
+  background: transparent !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  font-family: 'Barlow', sans-serif !important;
+  padding: 9px 18px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  position: relative !important;
+  transition: background 0.12s, color 0.12s !important;
+}
+
+/* Hover state */
+.desk-sidebar .item:hover,
+.standard-sidebar-section a:hover,
+.standard-sidebar-section a.standard-sidebar-item:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+}
+
+/* ── ACTIVE item — TEAL (not dark green) ────────────────── */
+.desk-sidebar .item.selected,
+.desk-sidebar .item.active,
+.desk-sidebar .item[class*="selected"],
+.standard-sidebar-section a.selected,
+.standard-sidebar-section a.active,
+.standard-sidebar-section .standard-sidebar-item.selected,
+.standard-sidebar-section .standard-sidebar-item.active {
+  background: rgba(43, 191, 191, 0.18) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+/* Teal left accent bar on active item */
+.desk-sidebar .item.selected::before,
+.desk-sidebar .item.active::before,
+.standard-sidebar-section a.selected::before,
+.standard-sidebar-section a.active::before,
+.standard-sidebar-section .standard-sidebar-item.selected::before,
+.standard-sidebar-section .standard-sidebar-item.active::before {
+  content: '' !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 4px !important;
+  bottom: 4px !important;
+  width: 3px !important;
+  background: #2BBFBF !important;
+  border-radius: 0 2px 2px 0 !important;
+}
+
+/* ── Active item bullet/icon — override dark green circle ── */
+.desk-sidebar .item.selected .sidebar-item-icon,
+.desk-sidebar .item.active .sidebar-item-icon,
+.standard-sidebar-section a.selected .sidebar-item-icon,
+.standard-sidebar-section a.active .sidebar-item-icon,
+
+/* The green circle icon Frappe uses for active module */
+.desk-sidebar .item .indicator-pill,
+.desk-sidebar .item .indicator,
+.standard-sidebar-section .indicator-pill,
+.standard-sidebar-section .indicator {
+  background: #2BBFBF !important;
+  color: #0B3D3A !important;
+  border-color: #2BBFBF !important;
+}
+
+/* Override any green dot/circle with teal */
+.desk-sidebar svg circle,
+.standard-sidebar-section svg circle {
+  fill: #2BBFBF !important;
+  stroke: #2BBFBF !important;
+}
+
+/* The specific green active-module icon Frappe renders */
+.desk-sidebar .item .active-module-icon,
+.standard-sidebar-section .active-module-icon {
+  background: #2BBFBF !important;
+  border-color: #2BBFBF !important;
+  color: #fff !important;
+  box-shadow: 0 0 0 3px rgba(43,191,191,0.25) !important;
+}
+
+/* ── Sidebar icons (SVG / img) ──────────────────────────── */
+.desk-sidebar .item .sidebar-item-icon,
+.standard-sidebar-section .sidebar-item-icon {
+  width: 16px !important;
+  height: 16px !important;
+  flex-shrink: 0 !important;
+  opacity: 0.55 !important;
+  filter: brightness(0) invert(1) !important;
+}
+
+.desk-sidebar .item.selected .sidebar-item-icon,
+.desk-sidebar .item.active .sidebar-item-icon,
+.desk-sidebar .item:hover .sidebar-item-icon {
+  opacity: 1 !important;
+  /* teal-tinted icon on active/hover */
+  filter: brightness(0) saturate(100%) invert(72%) sepia(55%)
+          saturate(500%) hue-rotate(140deg) brightness(105%) !important;
+}
+
+/* ── Divider between sections ───────────────────────────── */
+.desk-sidebar hr,
+.desk-sidebar .sidebar-divider {
+  border-color: rgba(255,255,255,0.08) !important;
+  margin: 5px 14px !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   DASHBOARD CONTENT AREA
+══════════════════════════════════════════════════════════ */
+
+/* Page title */
+.page-head .title-area .page-title,
+.page-head h3,
+.page-head .head-title {
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-size: 24px !important;
+  font-weight: 800 !important;
+  color: #0B3D3A !important;
+  letter-spacing: 0.3px !important;
+}
+
+/* ── Dashboard number cards ─────────────────────────────── */
+.widget.number-widget-box,
+.number-widget-box {
+  background: #ffffff !important;
+  border: 1px solid #E8EAEC !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+  transition: all 0.18s ease !important;
+}
+
+.widget.number-widget-box:hover {
+  border-color: #2BBFBF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 16px rgba(43,191,191,0.15) !important;
+}
+
+/* Widget label text (FASTAG WALLET BALANCE etc.) */
+.widget.number-widget-box .widget-label,
+.number-widget-box .widget-label,
+.number-widget-box label {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  color: #888 !important;
+  font-family: 'Barlow', sans-serif !important;
+}
+
+/* Big numbers inside widgets — override pink with teal */
+.widget.number-widget-box .number,
+.number-widget-box .number,
+.widget.number-widget-box h3,
+.number-widget-box h3 {
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  color: #2BBFBF !important;    /* teal instead of pink */
+}
+
+/* Override specific colored values Frappe/ERPNext sets */
+.number-widget-box .widget-content .primary-value,
+.number-widget-box .primary-value {
+  color: #2BBFBF !important;
+}
+
+/* Second number card  (BPCL — shown in amber/gold) */
+.number-widget-box:nth-child(2) .number,
+.number-widget-box:nth-child(2) h3,
+.number-widget-box:nth-child(2) .primary-value {
+  color: #EF9F27 !important;
+}
+
+/* ── Chart widgets ──────────────────────────────────────── */
+.widget.chart-widget-box,
+.chart-widget-box {
+  background: #ffffff !important;
+  border: 1px solid #E8EAEC !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+}
+
+.widget.chart-widget-box .widget-title,
+.chart-widget-box .widget-title {
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #0B3D3A !important;
+}
+
+.widget.chart-widget-box .widget-subtitle,
+.chart-widget-box .widget-subtitle {
+  font-size: 11px !important;
+  color: #aaa !important;
+}
+
+/* Override pink/hot-pink chart bars with teal palette */
+.frappe-chart .bar-group rect,
+.frappe-chart rect[data-index] {
+  fill: #2BBFBF !important;
+}
+
+/* Multiple series — teal, amber, dark */
+.frappe-chart .bar-group:nth-child(1) rect { fill: #2BBFBF !important; }
+.frappe-chart .bar-group:nth-child(2) rect { fill: #0B3D3A !important; }
+.frappe-chart .bar-group:nth-child(3) rect { fill: #EF9F27 !important; }
+.frappe-chart .bar-group:nth-child(4) rect { fill: #E24B4A !important; }
+.frappe-chart .bar-group:nth-child(5) rect { fill: #1D9E75 !important; }
+.frappe-chart .bar-group:nth-child(6) rect { fill: #185FA5 !important; }
+
+/* Line/area charts */
+.frappe-chart path.line-graph-path { stroke: #2BBFBF !important; }
+.frappe-chart path.area-graph-path { fill: rgba(43,191,191,0.12) !important; }
+
+/* Chart axis text */
+.frappe-chart .x.axis text,
+.frappe-chart .y.axis text {
+  fill: #888 !important;
+  font-family: 'Barlow', sans-serif !important;
+  font-size: 11px !important;
+}
+
+/* Chart tooltip */
+.frappe-chart .graph-svg-tip {
+  background: #0B3D3A !important;
+  color: #fff !important;
+  border-radius: 6px !important;
+  font-family: 'Barlow', sans-serif !important;
+}
+
+/* ── Section/dashboard heading ──────────────────────────── */
+.dashboard-section-head,
+.section-head,
+h5.section-head {
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  color: #0B3D3A !important;
+  letter-spacing: 0.3px !important;
+  margin-bottom: 12px !important;
+  padding-bottom: 6px !important;
+  border-bottom: 2px solid #2BBFBF !important;
+  display: inline-block !important;
+}
+
+/* ── Frappe shortcut / link widgets ─────────────────────── */
+.widget.shortcut-widget-box {
+  background: #ffffff !important;
+  border: 1px solid #E8EAEC !important;
+  border-radius: 10px !important;
+  transition: all 0.15s !important;
+}
+.widget.shortcut-widget-box:hover {
+  border-color: #2BBFBF !important;
+  box-shadow: 0 4px 16px rgba(43,191,191,0.15) !important;
+  transform: translateY(-2px) !important;
+}
+.widget.shortcut-widget-box .widget-subtitle {
+  color: #2BBFBF !important;
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-weight: 800 !important;
+}
+
+/* ── Primary button ─────────────────────────────────────── */
+.btn-primary {
+  background: #2BBFBF !important;
+  border-color: #2BBFBF !important;
+  color: #fff !important;
+  font-family: 'Barlow', sans-serif !important;
+  font-weight: 600 !important;
+  border-radius: 7px !important;
+  transition: background 0.15s !important;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background: #0B3D3A !important;
+  border-color: #0B3D3A !important;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar              { width: 5px; height: 5px; }
+::-webkit-scrollbar-track        { background: transparent; }
+::-webkit-scrollbar-thumb        { background: #2BBFBF; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover  { background: #0B3D3A; }
+
+/* ── Indicator pills ────────────────────────────────────── */
+.indicator-pill.green, .indicator.green { background: rgba(43,191,191,0.15) !important; color: #0B3D3A !important; }
+.indicator-pill.red,   .indicator.red   { background: rgba(226,75,74,0.12)  !important; color: #7a1f1f !important; }
+
+/* ── Remove any residual pink from Frappe charts ─────────── */
+[style*="color: rgb(255, 99, 132)"],
+[style*="color: #ff6384"],
+[style*="color: pink"],
+[style*="background-color: rgb(255, 99, 132)"] {
+  color: #2BBFBF !important;
+  background-color: #2BBFBF !important;
+}
+
+.widget,
+.frappe-card,
+.chart-widget-box,
+.number-widget-box {
+  background: #ffffff !important;
+  border-radius: 12px !important;
+  border: 1px solid #e6e9ec !important;
+
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06) !important;
+
+  padding: 16px !important;
+}
+
+.widget + .widget {
+  margin-top: 16px !important;
+}
+
+/* Smooth hover */
+.widget:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08) !important;
+  transition: 0.2s;
+}
+
