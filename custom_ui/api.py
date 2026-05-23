@@ -1,5 +1,8 @@
 import frappe
 
+DEFAULT_LANDING_WORKSPACE = "Fleet Management"
+
+
 @frappe.whitelist()
 def get_total_distance():
     value = frappe.db.sql("""
@@ -11,3 +14,10 @@ def get_total_distance():
     return {
         "value": round(value)
     }
+
+
+def set_default_landing_workspace(doc, method=None):
+    if doc.name in ("Guest", "Administrator"):
+        return
+    if not doc.default_workspace:
+        doc.default_workspace = DEFAULT_LANDING_WORKSPACE
