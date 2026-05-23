@@ -439,3 +439,117 @@ h5.section-head {
   transition: 0.2s;
 }
 
+/* ══════════════════════════════════════════════════════════
+   FORM FOOTER FIX — keep footer at bottom, not top-right
+══════════════════════════════════════════════════════════ */
+
+/* The layout main section needs to allow natural document flow */
+.layout-main-section-wrapper {
+  overflow-y: auto !important;
+  height: calc(100vh - 48px) !important;
+  display: block !important; /* override flex so footer sits after content */
+}
+
+.layout-main-section {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100% !important;
+}
+
+/* Page content area grows, footer stays at bottom */
+.page-container {
+  height: auto !important; /* let content define height */
+}
+
+/* Form footer — force it to the bottom of document flow */
+.form-footer {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: 100% !important;
+  margin-top: auto !important;
+  background: #fff !important;
+  border-top: 1px solid #e6e9ec !important;
+  padding: 16px 20px !important;
+  z-index: auto !important;
+}
+
+/* After-save section layout */
+.form-footer .after-save {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+}
+
+/* Comment box styling */
+.form-footer .comment-box {
+  background: #f8f9fa !important;
+  border-radius: var(--border-radius-md, 8px) !important;
+  border: 1px solid #e6e9ec !important;
+  padding: 12px 16px !important;
+}
+
+.form-footer .comment-input-header span {
+  font-family: 'Barlow', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  color: #888 !important;
+}
+
+/* Activity / timeline section */
+.form-footer .new-timeline {
+  padding-top: 8px !important;
+}
+
+.form-footer .timeline-item .activity-title h4,
+.form-footer h4 {
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #0B3D3A !important;
+}
+
+.form-footer .timeline-content {
+  font-family: 'Barlow', sans-serif !important;
+  font-size: 13px !important;
+  color: #666 !important;
+}
+
+.form-footer .timeline-dot {
+  background: #2BBFBF !important;
+  border-color: #2BBFBF !important;
+}
+
+/* New Email action button */
+.form-footer .action-btn {
+  font-family: 'Barlow', sans-serif !important;
+  font-size: 12px !important;
+  border-color: #2BBFBF !important;
+  color: #2BBFBF !important;
+}
+.form-footer .action-btn:hover {
+  background: #2BBFBF !important;
+  color: #fff !important;
+}
+
+/* Scroll to top button */
+.scroll-to-top {
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  z-index: 999 !important;
+  background: #2BBFBF !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+  color: #fff !important;
+}
+.scroll-to-top:hover {
+  background: #0B3D3A !important;
+}
