@@ -24,7 +24,14 @@ app_license = "mit"
 #     "/assets/custom_ui/js/fleet_dashboard.js",
 # ]
  
-app_include_css = "/assets/custom_ui/css/new_style.css"
+app_include_css = "/assets/custom_ui/css/fleet_ui.css?v=20260519-sidebar-fix"
+
+doc_events = {
+    "User": {
+        "before_insert": "custom_ui.api.set_default_landing_workspace",
+    }
+}
+
 # Apps
 # ------------------
 
