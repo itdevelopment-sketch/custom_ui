@@ -24,7 +24,7 @@ app_license = "mit"
 #     "/assets/custom_ui/js/fleet_dashboard.js",
 # ]
  
-app_include_css = "/assets/custom_ui/css/fleet_ui.css?v=20260519-sidebar-fix"
+app_include_css = "/assets/custom_ui/css/fleet_ui.css?v=20260605-sidebar-nowrap"
 
 doc_events = {
     "User": {
