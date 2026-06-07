@@ -520,8 +520,10 @@ h5.section-head {
   white-space: normal !important;
   overflow: visible !important;
   text-overflow: clip !important;
-  word-break: break-word !important;
-  overflow-wrap: anywhere !important;
+  /* Wrap only at spaces — never split a word mid-character
+     (was breaking "Dashboards" into "Dashboard s"). */
+  word-break: normal !important;
+  overflow-wrap: normal !important;
   line-height: 1.25 !important;
   flex: 1 1 auto !important;
   min-width: 0 !important;
